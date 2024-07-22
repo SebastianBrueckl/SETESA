@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETELU Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+body{
+    background-color: #000000;
+}
+        
+body {
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    width: 250px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: right 1s;
+}
+
+#container.show {
+    right: 20px;
+}
+
+#closeBtn {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.gradient-text{
+    font-size: 3pc;
+    margin-left: 4pc;
+}
+.hidden {
+    display: none;
+}
+div{
+    margin-left: 4pc;
+    margin-right: 2pc;
+    background-color: #ffffff;
+}
+    </style>
+</head>
+<body>
+    <div class="nav container">
+        <nav>
+            <img src="SETESA Logo.png" alt="Bild konnte nicht geladen werden" style="width: 3pc;">
+            <a href="">Startseite</a>
+            <a href="">Preise</a>
+            <a href="">Bestellung</a>
+            <a href="">Mittagszustellung</a>
+        </nav>
+    </div>
+    <p id="text" class="gradient-text no-repeat-color" style="margin-top: 8pc;">
+        Herzlich Willkommen!
+    </p>
+    <div id="container" class="hidden">
+        <button id="closeBtn">X</button>
+        <p>Hört SETESA auf? <br>
+            <button href="SETESA zu SETELU.html">Mehr erfahren</button></p>
+    </div>
+    <br><br><br><br>
+    <a href="" style="text-decoration: none;">
+        <div style="height: 20pc; width: 40pc; margin-right: 5pc;">
+            <img src="Job.jpg" alt="Bild konnte nicht geladen werden" style="height: 20pc;">
+            <div style="margin-right: 2pc; margin-top: -15pc;">
+                <p style="text-align: right; color: #000000; align-self: right;">
+                    Du wirst gesucht!
+                </p>
+                <p style="text-align: right; color: #000000; align-self: right; font-size: 1pc;">
+                    Heute: 18:21 Uhr
+                </p>
+            </div>
+        </div>
+    </a>
+    <br><br>
+
+    
+        <div style="height: 20pc; width: 40pc; margin-right: 5pc;">
+                <img src="images.jpeg" alt="Bild konnte nicht geladen werden" style="height: 20pc;">
+            <div style="margin-right: 2pc; margin-top: -15pc;">
+                <p style="text-align: right; color: #000000; align-self: right;">
+                    Jetz neu!  
+                </p>
+                <p style="text-align: right; color: #000000; align-self: right; font-size: 1pc;">
+                    Heute: 18:17 Uhr
+                </p>
+            </div>
+        </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('container');
+    const closeBtn = document.getElementById('closeBtn');
+
+    function showContainer() {
+        container.classList.remove('hidden');
+        setTimeout(() => {
+            container.classList.add('show');
+        }, 100); // Slight delay to trigger the CSS transition
+    }
+
+    function hideContainer() {
+        container.classList.remove('show');
+        setTimeout(() => {
+            container.classList.add('hidden');
+        }, 1000); // Wait for the transition to finish before hiding
+    }
+
+    closeBtn.addEventListener('click', hideContainer);
+
+    setInterval(showContainer, 15000);
+});
+    </script>
+</body>
+</html>
+
